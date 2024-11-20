@@ -1,0 +1,26 @@
+th:first-child{ 
+    background-color: red;
+}
+
+td:first-child{ 
+    background-color: red;
+}
+th:last-child{
+    background-color: red;
+}
+td:last-child{
+    background-color: red;
+}
+
+table,th,td{
+    border: 1px black solid;
+}
+
+span{
+    color: red;
+    text-shadow: 1px 1px black;
+    
+}
+.error{
+    display:none;
+}
