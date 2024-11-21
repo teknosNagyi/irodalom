@@ -71,18 +71,20 @@ form.addEventListener('submit',function(e){
     const esemeny2value = esemeny2.value
     const evszam2value = evszam2.value
 
-    const hozzadott={
+    
+
+    
+    if(validate(uralkodonevvalue,esemeny1value,evszam1value)){
+     const hozzadott={
         uralkod:uralkodonevvalue,
         esemeny: esemeny1value,
         evszam:evszam1value,
         evszam2:evszam2value,
-        esemeny2:esemeny2value
-
-    }
-
+        esemeny2:esemeny2value 
+    }  
     array.push(hozzadott)
     rendertable(array);
-    form.reset();
+    form.reset();}
 })
 
 
@@ -115,7 +117,7 @@ function rendertable(asd){
         
        const cella4 =document.createElement('td')
        cella4.innerHTML=adat.esemeny2
-       
+       cella4.classList.add("cigany")
        masodik_sor.appendChild(cella4)
        
        const cella5 =document.createElement('td')
@@ -129,11 +131,30 @@ function rendertable(asd){
     }
 }
 
-function validate(){
-    let result = false
-    const uralkodonev = document.getElementById('uralkodo_nev')
-    if (uralkodonev.value==""){
+function validate(uralkodonev1,esemeny1,evszam1){
+    let result = true
+    document.getElementById('uralkodo_neverror').innerHTML=""
+    document.getElementById('esemeny1error').innerHTML=""
+    document.getElementById("evszam1error").innerHTML=""
+    
+    if (!uralkodonev1){
+        const uralkodonev = document.getElementById('uralkodo_neverror')
+        uralkodonev.innerHTML="error"
         result=false
     }
+    if (!esemeny1){
+        const esemeny = document.getElementById('esemeny1error')
+        esemeny.innerHTML="error"
+        result=false
+    }
+    if (!evszam1){
+        const evszam = document.getElementById("evszam1error")
+        evszam.innerHTML="erorr"
+        result=false
+    }
+
+
+
     return result
+
 }

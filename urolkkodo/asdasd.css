@@ -1,26 +1,22 @@
-th:first-child{ 
+
+th:first-child, td:first-child {
     background-color: red;
 }
 
-td:first-child{ 
-    background-color: red;
-}
-th:last-child{
-    background-color: red;
-}
-td:last-child{
+
+th:nth-last-child(1), td:nth-last-child(1) {
     background-color: red;
 }
 
 table,th,td{
     border: 1px black solid;
+    border-collapse: collapse;
 }
 
-span{
+
+.error{
     color: red;
     text-shadow: 1px 1px black;
     
 }
-.error{
-    display:none;
-}
+
